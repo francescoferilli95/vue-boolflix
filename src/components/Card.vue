@@ -1,14 +1,15 @@
 <template>
   <div class="card">
       <ul>
-          <li>Title: {{info.title}}</li>
-          <li v-if="info.title === undefined">Title: {{info.name}}</li>
-          <li>Original Title: {{info.original_title}}</li>
-          <li v-if="info.original_title === undefined">Original Title: {{info.original_name}}</li>
-          <li v-if="info.original_language === 'it'">Original Language: <img class="language" src="@/assets/images/it.png" alt="it"></li>
-          <li v-else-if="info.original_language === 'en'">Original Language: <img class="language" src="@/assets/images/en.png" alt="en"></li>
+          <li>Title: {{info.title == null ? info.name : info.title}}</li>
+          <li>Original Title: {{info.original_title == null ? info.original_name : info.original_name}}</li>
+         <li v-if="!flags.includes(info.original_language)">Original Language: {{info.original_language}}</li>
+         <li v-else>
+             <span>Original Language:</span>
+             <img class="language" :src="require(`../assets/images/${info.original_language}.png`)" alt="language">
+         </li>
           <li>Vote: <i v-for="(n,i) in Math.ceil(info.vote_average /2)" :key="'element' + i" class="fas fa-star"></i>
-            <i v-for="(n,ind) in 5 - Math.ceil(info.vote_average /2)" :key="'element' + ind" class="far fa-star"></i></li>
+            <i v-for="(n,ind) in 5 - Math.ceil(info.vote_average /2)" :key="'el' + ind" class="far fa-star"></i></li>
       </ul>
   </div>
 </template>
@@ -17,6 +18,11 @@
 export default {
     name: 'Card',
     props: ['info'],
+    data() {
+        return {
+            flags: ['en', 'it'],
+        }
+    }
 }
 </script>
 
