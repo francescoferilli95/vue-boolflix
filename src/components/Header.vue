@@ -4,8 +4,8 @@
       <h1>Boolflix</h1>
       </div>
       <div class="search">
-          <input class="text" type="text" placeholder="Search Movies/Series" v.model.trim="searchText">
-          <button class="btn">Search</button>
+            <input class="text" type="text" placeholder="Search Movies/Series" v-model.trim="searchText">
+            <button type="button" @click="$emit('searchingText', searchText)" class="btn">Search</button>
       </div>
   </header>
 </template>
