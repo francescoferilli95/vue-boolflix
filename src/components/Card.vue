@@ -7,7 +7,8 @@
           <li v-if="info.original_title === undefined">Original Title: {{info.original_name}}</li>
           <li v-if="info.original_language === 'it'">Original Language: <img class="language" src="@/assets/images/it.png" alt="it"></li>
           <li v-else-if="info.original_language === 'en'">Original Language: <img class="language" src="@/assets/images/en.png" alt="en"></li>
-          <li>Vote: {{info.vote_average}}</li>
+          <li>Vote: <i v-for="(n,i) in Math.ceil(info.vote_average /2)" :key="'element' + i" class="fas fa-star"></i>
+            <i v-for="(n,ind) in 5 - Math.ceil(info.vote_average /2)" :key="'element' + ind" class="far fa-star"></i></li>
       </ul>
   </div>
 </template>
