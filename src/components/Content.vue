@@ -14,15 +14,6 @@ export default {
         Card,
     },
     props: ['movies'],
-    methods: {
-        getLanguage() {
-            this.movies.forEach(el => {
-                if(el.original_language === 'it') {
-                    el.original_language = '@/assets/images/in.png';
-                }
-            });
-        }
-    },
 }
 </script>
 
