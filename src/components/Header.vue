@@ -4,7 +4,7 @@
       <h1>Boolflix</h1>
       </div>
       <div class="search">
-          <input class="text" type="text" placeholder="Search Movies/Series">
+          <input class="text" type="text" placeholder="Search Movies/Series" v.model.trim="searchText">
           <button class="btn">Search</button>
       </div>
   </header>
@@ -13,6 +13,11 @@
 <script>
 export default {
     name: 'Header',
+    data() {
+        return {
+            searchText: '',
+        }
+    },
 }
 </script>
 
