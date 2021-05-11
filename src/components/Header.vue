@@ -1,9 +1,10 @@
 <template>
   <header class="header">
       <div class="logo">
-      <img src="@/assets/images/boolflix.png" alt="logo app">
+      <a href="/"><img src="@/assets/images/boolflix.png" alt="logo app"></a>
       </div>
       <div class="search">
+            <i class="fa fa-search"></i>
             <input class="text" type="text" placeholder="Search Movies/Series" v-model.trim="searchText">
             <button type="button" @click="$emit('searchingText', searchText)" class="btn">Search</button>
       </div>
@@ -34,6 +35,11 @@ export default {
 
 .logo img {
     width: 50%;
+}
+
+.search i {
+    margin-right: 10px;
+    cursor: pointer;
 }
 
 .btn {

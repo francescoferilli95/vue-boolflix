@@ -2,7 +2,8 @@
   <div id="app">
   <header>
     <Header @searchingText="updateSearch"/>
-    </header>  
+    </header>
+    <Loader />  
   <main>
     <Content :movies="movieList" />
   </main>
@@ -32,7 +33,7 @@ export default {
     }
   },
   created() {
-    this.createdMovies();
+  this.createdMovies();
   },
   methods: {
     updateSearch(text) {
@@ -69,7 +70,7 @@ export default {
       }
     },
     createdMovies() {
-    axios.get(this.weekMovieURL, {
+    axios.get(this.weekSeriesURL, {
       params: {
         api_key: '1d8038f21df4adea65574db5ad099477',
       }

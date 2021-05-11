@@ -64,7 +64,7 @@ export default {
     padding: 20px;
     width: 342px;
     height: 100%;
-    background: rgba(0,0,0, .7);
+    background: rgba(0,0,0, .8);
     color: #fff;
     overflow: auto;
     cursor: pointer;
