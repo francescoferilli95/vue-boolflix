@@ -37,7 +37,7 @@ export default {
   methods: {
     updateSearch(text) {
       if (text.length > 0) {
-      axios.get(this.apiURL, {
+      axios.get(this.movieURL, {
         params: {
           api_key:'1d8038f21df4adea65574db5ad099477',
           query: text,
@@ -53,7 +53,7 @@ export default {
         alert('Please insert at least one letter');
       }
       if (text.length > 0) {
-        axios.get(this.apiURL2, {
+        axios.get(this.serisURL, {
         params: {
           api_key: '1d8038f21df4adea65574db5ad099477',
           query: text,
