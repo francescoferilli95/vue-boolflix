@@ -21,7 +21,7 @@ export default {
 
 .content {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     height: calc(100vh - 57px);
     background: #2e2e2e;
     color: #fff;
@@ -29,8 +29,10 @@ export default {
     overflow-y: auto;
 }
 
-.movie:not(:first-child) {
-    margin-top: 20px;
+.movie {
+    width: calc(100% / 5);
+    height: 500px;
+    margin: 20px 0;
 }
 
 </style>
