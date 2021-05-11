@@ -1,7 +1,7 @@
 <template>
   <header class="header">
       <div class="logo">
-      <h1>Boolflix</h1>
+      <img src="@/assets/images/boolflix.png" alt="logo app">
       </div>
       <div class="search">
             <input class="text" type="text" placeholder="Search Movies/Series" v-model.trim="searchText">
@@ -30,6 +30,10 @@ export default {
     background: #000;
     color: red;
     padding: 10px;
+}
+
+.logo img {
+    width: 50%;
 }
 
 .btn {

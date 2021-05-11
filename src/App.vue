@@ -25,9 +25,22 @@ export default {
     return {
       movieList: [],
       seriesList: [],
-      apiURL: 'https://api.themoviedb.org/3/search/movie',
-      apiURL2: 'https://api.themoviedb.org/3/search/tv',
+      movieURL: 'https://api.themoviedb.org/3/search/movie',
+      seriesURL: 'https://api.themoviedb.org/3/search/tv',
+      weekMovieURL: 'https://api.themoviedb.org/3/trending/movie/week',
+      weekSeriesURL: 'https://api.themoviedb.org/3/trending/tv/week',
     }
+  },
+  created() {
+    axios.get(this.weekMovieURL, {
+      params: {
+        api_key: '1d8038f21df4adea65574db5ad099477',
+      }
+    })
+    .then(el => {
+      this.movieList = el.data.results;
+    })
+    .catch(er => {console.log('Error', er);})
   },
   methods: {
     updateSearch(text) {
