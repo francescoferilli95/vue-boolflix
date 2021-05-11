@@ -11,7 +11,7 @@
           <p v-else><span>Original Language:</span><img class="language" :src="require(`../assets/images/${info.original_language}.png`)" alt="language"></p>
           <p>Vote: <i v-for="(n,i) in Math.ceil(info.vote_average /2)" :key="'element' + i" class="fas fa-star star"></i>
             <i v-for="(n,ind) in 5 - Math.ceil(info.vote_average /2)" :key="'el' + ind" class="far fa-star"></i></p>
-            <p>Overview: {{info.overview}}</p>
+          <p>Overview: {{info.overview}}</p>
       </div>
     </div>
 </template>

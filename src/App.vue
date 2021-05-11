@@ -32,15 +32,7 @@ export default {
     }
   },
   created() {
-    axios.get(this.weekMovieURL, {
-      params: {
-        api_key: '1d8038f21df4adea65574db5ad099477',
-      }
-    })
-    .then(el => {
-      this.movieList = el.data.results;
-    })
-    .catch(er => {console.log('Error', er);})
+    this.createdMovies();
   },
   methods: {
     updateSearch(text) {
@@ -67,14 +59,25 @@ export default {
           query: text,
         }
       })
-      .then(result => {
-        this.seriesList = result.data.results;
+      .then(res => {
+        this.seriesList = res.data.results;
         console.log(this.movieList);
       })
-      .catch(error => {console.log('Error', error);});
+      .catch(err => {console.log('Error', err);});
       } else {
         alert('Please insert at least one letter');
       }
+    },
+    createdMovies() {
+    axios.get(this.weekMovieURL, {
+      params: {
+        api_key: '1d8038f21df4adea65574db5ad099477',
+      }
+    })
+    .then(res => {
+      this.movieList = res.data.results;
+    })
+    .catch(err => {console.log('Error', err);})
     }
   },
 }
