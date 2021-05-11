@@ -22,7 +22,7 @@ export default {
 .content {
     display: flex;
     flex-wrap: wrap;
-    height: calc(100vh - 57px);
+    height: calc(100vh - 67px);
     background: #2e2e2e;
     color: #fff;
     padding: 50px 0 0 40px;
