@@ -4,7 +4,7 @@
     <Header @searchingText="updateSearch"/>
     </header> 
   <main>
-    <Content :movies="movieList" />
+    <Content :movies="movieList"/>
   </main>
 
   </div>
@@ -27,12 +27,11 @@ export default {
       seriesList: [],
       movieURL: 'https://api.themoviedb.org/3/search/movie',
       seriesURL: 'https://api.themoviedb.org/3/search/tv',
-      weekMovieURL: 'https://api.themoviedb.org/3/trending/movie/week',
-      weekSeriesURL: 'https://api.themoviedb.org/3/trending/tv/week',
+      weekURL: 'https://api.themoviedb.org/3/trending/all/week',
     }
   },
   created() {
-  this.createdMovies();
+  this.createdContent();
   },
   methods: {
     updateSearch(text) {
@@ -68,8 +67,8 @@ export default {
         alert('Please insert at least one letter');
       }
     },
-    createdMovies() {
-    axios.get(this.weekSeriesURL, {
+    createdContent() {
+    axios.get(this.weekURL, {
       params: {
         api_key: '1d8038f21df4adea65574db5ad099477',
       }
@@ -80,6 +79,7 @@ export default {
     .catch(err => {console.log('Error', err);})
     }
   },
+
 }
 </script>
 

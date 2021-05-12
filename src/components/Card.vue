@@ -13,7 +13,7 @@
             <i v-for="(n,ind) in 5 - Math.ceil(info.vote_average /2)" :key="'el' + ind" class="far fa-star"></i></p>
           <p>Overview: {{info.overview}}</p>
       </div>
-    </div>
+    </div>  
 </template>
 
 <script>
