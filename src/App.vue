@@ -2,8 +2,7 @@
   <div id="app">
   <header>
     <Header @searchingText="updateSearch"/>
-    </header>
-    <Loader />  
+    </header> 
   <main>
     <Content :movies="movieList" />
   </main>
